@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProblemeComponent } from './probleme/probleme.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,7 @@ import { AccueilComponent } from './accueil/accueil.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      { path:'accueil', component:AccueilComponent},
-      { path:'probleme', component:ProblemeComponent},    
-      { path:'', redirectTo:'accueil', pathMatch:'full'},
-      { path:'**', redirectTo:'accueil', pathMatch:'full'}
-    ])
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
