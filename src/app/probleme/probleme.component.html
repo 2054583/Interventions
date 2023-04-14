@@ -87,17 +87,24 @@
                 problemeForm.get('noTypeProbleme').dirty) &&
                 !problemeForm.get('noTypeProbleme').valid}"
                 >
-                   <option value="">Sélectionner un type de problème (obligatoire)</option>
+                   <option value="">Sélectionner un type de problème (obligatoire)...</option>
                    <option *ngFor="let cat of typesProbleme" [value]="cat.id">{{cat.descriptionTypeProbleme}}</option>     
               </select>
-
+              <span class="form-text" *ngIf="(problemeForm.get('noTypeProbleme').touched ||
+              problemeForm.get('noTypeProbleme').dirty) &&
+              (problemeForm.get('noTypeProbleme').errors)">
+              <span *ngIf=" problemeForm.get('noTypeProbleme').errors['required']">
+                <small class="text-muted">
+                    Merci de sélectionner un type de problème.
+                </small>
+              </span>
+             </span>
           </div>
         </div>
             </form>
           </div>
       </div>
       <div class="card-footer">
-            <!-- Bouton save ici -->
             <button class="btn btn-primary" type="submit">
                   Sauvegarder
             </button>    
