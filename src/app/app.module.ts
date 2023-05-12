@@ -8,7 +8,7 @@ import { ProblemeComponent } from './probleme/probleme.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProblemeData } from './probleme/ProblemeData';
 
 @NgModule({
@@ -21,9 +21,9 @@ import { ProblemeData } from './probleme/ProblemeData';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule .forRoot(ProblemeData, { delay: 1000 })
+    //HttpClientInMemoryWebApiModule .forRoot(ProblemeData, { delay: 1000 }),
+    //InMemoryWebApiModule.forRoot(ProblemeData, { delay: 1000 })
   ],
   providers: [],
   bootstrap: [AppComponent]

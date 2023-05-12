@@ -9,8 +9,8 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class TypeProblemeService {
 
-private baseUrl = 'api/typesprobleme';
-
+//private baseUrl = 'api/typesprobleme';
+private baseUrl = 'https://localhost:7115/v2/probleme'; 
 constructor(private _http: HttpClient) { }
 
 obtenirTypesProbleme(): Observable<ITypeProbleme[]> {
@@ -33,6 +33,6 @@ private handleError(err: HttpErrorResponse) {
     errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
   }
   console.error(errorMessage);
-  return throwError(errorMessage);
+  return throwError(() => new Error(err.message));
 }
 }
